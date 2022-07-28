@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import Category from "./components/Category";
+import Pages from "./pages/Pages";
+import { BrowserRouter, Link } from "react-router-dom";
+import Search from "./components/Search";
+import { GiKnifeFork } from "react-icons/gi";
+import styled from "styled-components";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <StyledNav>
+          <GiKnifeFork />
+          <StyledLogo to={"/"}>Cuizine</StyledLogo>
+        </StyledNav>
+        <Search />
+        <Category />
+        <Pages />
+      </BrowserRouter>
     </div>
   );
 }
+
+const StyledLogo = styled(Link)`
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-family: "Lobster Two", cursive;
+`;
+
+const StyledNav = styled.div`
+  padding: 4rem 0rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  svg {
+    font-size: 2rem;
+    cursor: pointer;
+  }
+`;
 
 export default App;
