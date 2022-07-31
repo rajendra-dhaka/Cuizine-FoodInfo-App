@@ -23,7 +23,7 @@ function Popular() {
       `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9`
     );
     const data = await api.json();
-    //console.log(data);// data.recipes gives an array of 9 objects
+    // console.log(data); // data.recipes gives an array of 9 objects
     // localStorage.setItem("popular", JSON.stringify(data.recipes));
     setPopular(data.recipes);
     // }
@@ -38,7 +38,7 @@ function Popular() {
           arrows: false,
           pagination: false,
           drag: "free",
-          gap: "5rem",
+          gap: "2rem",
         }}
       >
         {popular.map((recipe) => {
@@ -60,14 +60,44 @@ function Popular() {
 }
 
 const StyledWrapper = styled.div`
-  margin: 4rem 0rem;
+  margin: 1rem 0rem;
+  @media (max-width: 480px) {
+    h3 {
+      font-size: 1rem;
+    }
+  }
 `;
 
 const StyledCard = styled.div`
-  min-height: 25rem;
   border-radius: 2rem;
   overflow: hiddden;
   position: relative;
+  width: 17.5rem;
+  height: 15rem;
+  @media (max-width: 1210px) {
+    width: 14rem;
+    height: 13rem;
+  }
+  @media (max-width: 970px) {
+    width: 10rem;
+    height: 9rem;
+  }
+  @media (max-width: 670px) {
+    width: 8rem;
+    height: 7rem;
+  }
+  @media (max-width: 535px) {
+    width: 7.3rem;
+    height: 6.3rem;
+  }
+  @media (max-width: 480px) {
+    width: 7rem;
+    height: 6rem;
+  }
+  @media (max-width: 375px) {
+    width: 5.5rem;
+    height: 5rem;
+  }
 
   img {
     border-radius: 2rem;
@@ -87,11 +117,17 @@ const StyledCard = styled.div`
     width: 100%;
     text-align: center;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 0.75rem;
     height: 40%;
     display: flex;
     justify-content: center;
     align-items: center;
+    @media (max-width: 480px) {
+      font-size: 0.3rem;
+    }
+    @media (max-width: 970px) {
+      font-size: 0.5rem;
+    }
   }
 `;
 

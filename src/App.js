@@ -29,14 +29,22 @@ const StyledLogo = styled(Link)`
 `;
 
 const StyledNav = styled.div`
-  padding: 4rem 0rem;
+  padding: 1.5rem 0rem;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   svg {
-    font-size: 2rem;
+    font-size: 3rem;
     cursor: pointer;
+  }
+
+  @media (max-width: 480px) {
+    svg {
+      font-size: 2rem;
+    }
   }
 `;
 
 export default App;
+
+// Api-8415a2a7ec0a43c59f00470d59875510
