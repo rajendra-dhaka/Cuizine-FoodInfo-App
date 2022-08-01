@@ -17,7 +17,7 @@ function Veggie() {
     // LOCAL STORAGE TO SAVE NO. OF FETCH REQUEST ON PAGE REFRESH
     // const check = localStorage.getItem("veggie");
     // if (check) {
-    //   setVeggie(JSON.parse(check));
+    // setVeggie(JSON.parse(check));
     // } else {
     const api = await fetch(
       `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9&tags=vegetarian`
@@ -34,7 +34,15 @@ function Veggie() {
       <h3>Our Vegetarian Picks</h3>
       <Splide
         options={{
-          perPage: 4,
+          perPage: 3,
+          breakpoints: {
+            610: {
+              perPage: 2,
+            },
+            320: {
+              perPage: 1,
+            },
+          },
           arrows: false,
           pagination: false,
           drag: "free",
@@ -72,31 +80,47 @@ const StyledCard = styled.div`
   border-radius: 2rem;
   overflow: hiddden;
   position: relative;
-  width: 17.5rem;
-  height: 15rem;
-  @media (max-width: 1210px) {
-    width: 14rem;
-    height: 13rem;
+  width: 24rem;
+  height: 18rem;
+  @media (max-width: 1250px) {
+    width: 20rem;
+    height: 16rem;
   }
-  @media (max-width: 970px) {
-    width: 10rem;
+  @media (max-width: 1035px) {
+    width: 18rem;
+    height: 14rem;
+  }
+  @media (max-width: 940px) {
+    width: 16rem;
+    height: 12rem;
+  }
+  @media (max-width: 822px) {
+    width: 14rem;
+    height: 10rem;
+  }
+  @media (max-width: 715px) {
+    width: 12rem;
+    height: 8rem;
+  }
+  @media (max-width: 610px) {
+    width: 15.7rem;
+    height: 11rem;
+  }
+  @media (max-width: 525px) {
+    width: 14rem;
     height: 9rem;
   }
-  @media (max-width: 670px) {
-    width: 8rem;
-    height: 7rem;
+  /* @media (max-width: 470px) {
+    width: 12rem;
+    height: 8rem;
+  } */
+  @media (max-width: 400px) {
+    width: 10rem;
+    height: 8rem;
   }
-  @media (max-width: 535px) {
-    width: 7.3rem;
-    height: 6.3rem;
-  }
-  @media (max-width: 480px) {
-    width: 7rem;
-    height: 6rem;
-  }
-  @media (max-width: 375px) {
-    width: 5.5rem;
-    height: 5rem;
+  @media (max-width: 320px) {
+    width: 18rem;
+    height: 12rem;
   }
 
   img {
@@ -123,10 +147,7 @@ const StyledCard = styled.div`
     justify-content: center;
     align-items: center;
     @media (max-width: 480px) {
-      font-size: 0.3rem;
-    }
-    @media (max-width: 970px) {
-      font-size: 0.5rem;
+      font-size: 0.6rem;
     }
   }
 `;

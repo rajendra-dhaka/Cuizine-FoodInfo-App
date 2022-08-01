@@ -49,6 +49,18 @@ const StyledGrid = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   grid-gap: 1.5rem;
+  @media (max-width: 560px) {
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    grid-gap: 0.5rem;
+  }
+  @media (max-width: 435px) {
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    grid-gap: 0.3rem;
+  }
+  @media (max-width: 360px) {
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 18rem));
+    grid-gap: 0.3rem;
+  }
 `;
 
 const StyledCard = styled.div`
@@ -63,7 +75,11 @@ const StyledCard = styled.div`
 
   h4 {
     text-align: center;
-    padding: 1rem;
+    padding: 1rem 1rem;
+    @media (max-width: 400px) {
+      font-size: 0.7rem;
+      padding: 0.5rem 0.5rem;
+    }
   }
 `;
 

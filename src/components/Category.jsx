@@ -50,15 +50,29 @@ const StyledLink = styled(NavLink)`
   height: 5rem;
   cursor: pointer;
   transform: scale(0.8);
+  @media (max-width: 480px) {
+    margin-right: 0.5rem;
+  }
+  @media (max-width: 400px) {
+    margin-right: 0.1rem;
+    width: 3.5rem;
+    height: 3.5rem;
+  }
 
   h4 {
     color: #fff;
     font-size: 0.8rem;
+    @media (max-width: 400px) {
+      font-size: 0.6rem;
+    }
   }
 
   svg {
     color: #fff;
     font-size: 1.5rem;
+    @media (max-width: 400px) {
+      font-size: 1.2rem;
+    }
   }
 
   &.active {
@@ -69,10 +83,6 @@ const StyledLink = styled(NavLink)`
     h4 {
       color: #fff;
     }
-  }
-
-  @media (max-width: 480px) {
-    margin-right: 0.5rem;
   }
 `;
 

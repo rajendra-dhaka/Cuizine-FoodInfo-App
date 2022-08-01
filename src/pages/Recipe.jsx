@@ -87,7 +87,7 @@ const StyledDetailWrapper = styled.div`
   }
   li {
     font-size: 0.75rem;
-    line-height: 2.5rem;
+    line-height: 1.5rem;
   }
   ul {
     margin-top: 2rem;
@@ -110,6 +110,9 @@ const StyledButton = styled.button`
 const StyledInfo = styled.div`
   flex: 2;
   margin-left: 2rem;
+  @media (max-width: 629px) {
+    margin-left: 1rem;
+  }
 `;
 
 export default Recipe;
