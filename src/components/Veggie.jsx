@@ -5,7 +5,6 @@ import "@splidejs/react-splide/css";
 import { Link } from "react-router-dom";
 
 function Veggie() {
-  let number;
   //STATE
   const [veggie, setVeggie] = useState([]);
 
